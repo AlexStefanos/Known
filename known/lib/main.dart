@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import './sayHello.dart';
+import './askNews.dart';
 
 /*void main() {
   runApp(Known());
@@ -38,33 +39,12 @@ class _KnownState extends State<Known> {
         ),
         body: Column(
           children: [
-            /*
-            Text('hey'),
-            Text(
-              greetings[_greetingsIndex],
-            ),
-            */
             SayHello(
               greetings[_greetingsIndex],
             ),
-            // ignore: deprecated_member_use
-            RaisedButton(
-              child: Text('Salut !'),
-              onPressed: () => print('Nice to meet you !'),
-            ),
-            // ignore: deprecated_member_use
-            RaisedButton(
-              child: Text('Bonjour !'),
-              onPressed: () => {
-                print('Hi !'),
-                print('Hey !'),
-              },
-            ),
-            // ignore: deprecated_member_use
-            RaisedButton(
-              child: Text('Bonjour !'),
-              onPressed: _sayHello,
-            ),
+            AskNews(),
+            AskNews(),
+            AskNews(),
           ],
         ),
       ),
