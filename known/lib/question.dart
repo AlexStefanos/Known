@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class SayHello extends StatelessWidget {
-  final String sayHelloText;
+class Question extends StatelessWidget {
+  final String questionText;
 
 /* si on fait un constructeur 'classique', on a une erreur car on utilise une
 final String. Donc on ne peut lui 'réattribuer' la valeur donnée indirectement
 à travers le constructeur*/
-  SayHello(this.sayHelloText);
+  Question(this.questionText);
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ final String. Donc on ne peut lui 'réattribuer' la valeur donnée indirectement
       width: double.infinity,
       margin: EdgeInsets.all(10),
       child: Text(
-        sayHelloText,
+        questionText,
         style: TextStyle(fontSize: 22),
         textAlign: TextAlign.center,
       ),
