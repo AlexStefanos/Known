@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'question.dart';
-import 'answer.dart';
+import './quiz.dart';
+import './result.dart';
 
 /*void main() {
   runApp(Known());
@@ -28,7 +28,7 @@ class _KnownState extends State<Known> {
 
   @override
   Widget build(BuildContext context) {
-    const questions = [
+    final _questions = const [
       {
         'questionText': 'Quels sont tes artistes musicaux préférés ?',
         'answers': ['Kendrick Lamar', 'PNL', 'Eminem', 'Drake']
@@ -49,17 +49,13 @@ class _KnownState extends State<Known> {
           title: Text('Known'),
           backgroundColor: Colors.red,
         ),
-        body: Column(
-          children: [
-            Question(
-              questions[_questionIndex]['questionText'],
-            ),
-            ...(questions[_questionIndex]['answers'] as List<String>)
-                .map((answer) {
-              return Answer(_answerQuestion, answer);
-            }).toList()
-          ],
-        ),
+        body: _questionIndex < _questions.length
+            ? Quiz(
+                answerQuestion: _answerQuestion,
+                questionIndex: _questionIndex,
+                questions: _questions,
+              )
+            : Result(),
       ),
     );
   }
