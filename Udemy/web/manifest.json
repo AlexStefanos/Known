@@ -1,6 +1,6 @@
 {
-    "name": "known",
-    "short_name": "known",
+    "name": "udemy",
+    "short_name": "udemy",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

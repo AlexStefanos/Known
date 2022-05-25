@@ -1,4 +1,4 @@
-package com.example.known
+package com.example.udemy
 
 import io.flutter.embedding.android.FlutterActivity
 
