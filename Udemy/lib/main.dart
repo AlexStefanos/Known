@@ -35,7 +35,10 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Flutter App'),
+        title: Text('Flutter App',
+            style: TextStyle(
+              fontFamily: 'Roboto',
+            )),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -44,13 +47,66 @@ class MyHomePage extends StatelessWidget {
           Container(
             child: Card(
               color: Colors.blue,
-              child: Text("Coucou!"),
+              child: Text('Coucou!',
+                  style: TextStyle(
+                    fontFamily: 'Roboto',
+                  )),
               elevation: 5,
             ),
           ),
-          Card(
-            color: Colors.red,
-            child: Text('Hey!'),
+          Column(
+            children: transactions.map((tx) {
+              return Card(
+                child: Row(
+                  children: <Widget>[
+                    Container(
+                      margin: EdgeInsets.symmetric(
+                        vertical: 10,
+                        horizontal: 15,
+                      ),
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: Colors.red,
+                          width: 2,
+                        ),
+                      ),
+                      padding: EdgeInsets.all(10),
+                      child: Text(
+                        tx.amount.toString(),
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                          color: Colors.red,
+                          fontFamily: 'Roboto',
+                        ),
+                      ),
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Container(
+                          child: Text(tx.title,
+                              style: TextStyle(
+                                fontFamily: 'Roboto',
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                              )),
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(top: 5),
+                          child: Text(tx.date.toString(),
+                              style: TextStyle(
+                                fontSize: 10,
+                                color: Colors.grey,
+                                fontFamily: 'Roboto',
+                              )),
+                        )
+                      ],
+                    ),
+                  ],
+                ),
+              );
+            }).toList(),
           ),
         ],
       ),

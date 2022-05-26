@@ -19,10 +19,26 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Flutter App'),
+        title: Text(
+          'Known',
+          style: TextStyle(
+            fontFamily: 'Roboto',
+          ),
+        ),
       ),
-      body: Center(
-        child: Text('Widget Playground!'),
+      body: Row(
+        children: <Widget>[
+          Container(
+            child: Column(
+              children: <Widget>[
+                Text('Titre'),
+                Image(
+                  image: AssetImage("assets/imgs/movies/skyfall.jpg"),
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
