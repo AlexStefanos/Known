@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:first_app/gradient_container.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,10 +25,12 @@ class MyApp extends StatelessWidget {
       title: 'Flutter First App',
       theme: ThemeData(useMaterial3: true),
       home: Scaffold(
-        appBar: AppBar(
+        /*appBar: AppBar(
           title: const Text('Welcome to Flutter'),
-        ),
-        body: Container(
+        ),*/
+        body: GradientContainer(
+            Color.fromARGB(255, 26, 2, 80), Color.fromARGB(255, 45, 7, 98)),
+        /*Container(
           width: double.infinity,
           padding: const EdgeInsets.all(12),
           child: Column(
@@ -49,7 +52,7 @@ class MyApp extends StatelessWidget {
               ),
             ],
           ),
-        ),
+        ),*/
       ),
     );
   }

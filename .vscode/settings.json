@@ -1,0 +1,11 @@
+{
+    "files.exclude": {
+        "Archives/": true
+    },
+    "search.exclude": {
+        "Archives/": true
+    },
+    "dart.analysisExcludedFolders": [
+        "Archives/"
+    ]
+}
