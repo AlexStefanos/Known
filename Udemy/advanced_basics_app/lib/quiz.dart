@@ -47,6 +47,14 @@ class _QuizState extends State<Quiz> {
     }
   }
 
+  void resetQuiz() {
+    if (activeScreen == 'results-screen') {
+      setState(() {
+        activeScreen = 'start-screen';
+      });
+    }
+  }
+
   @override
   Widget build(context) {
     Widget screenWidget = StartScreen(const Color.fromARGB(255, 69, 18, 189),
@@ -58,6 +66,7 @@ class _QuizState extends State<Quiz> {
 
     if (activeScreen == 'results-screen') {
       screenWidget = ResultsScreen(
+        resetQuiz,
         chosenAnswers: selectedAnswers,
       );
     }

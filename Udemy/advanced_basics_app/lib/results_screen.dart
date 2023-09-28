@@ -3,9 +3,9 @@ import 'package:advanced_basics_app/data/questions.dart';
 import 'package:advanced_basics_app/questions_summary.dart';
 
 class ResultsScreen extends StatelessWidget {
-  const ResultsScreen({super.key, required this.chosenAnswers});
-
   final List<String> chosenAnswers;
+  final void Function() resetQuiz;
+  const ResultsScreen(this.resetQuiz, {super.key, required this.chosenAnswers});
 
   // List<Map<String, Object>> get summaryData()
 
@@ -55,7 +55,7 @@ class ResultsScreen extends StatelessWidget {
             QuestionsSummary(summaryData),
             const SizedBox(height: 30),
             TextButton(
-              onPressed: () {},
+              onPressed: resetQuiz,
               child: const Text('Recommencer depuis le début'),
             ),
           ],
